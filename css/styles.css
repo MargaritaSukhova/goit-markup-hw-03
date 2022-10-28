@@ -234,7 +234,7 @@ img {
 }
 
 .work-list {
---item: 3;
+    --items: 3;
 }
 
 /* Team */
@@ -343,6 +343,9 @@ img {
 }
 
 /* Portfolio */
+.portfolio-list {
+    --items: 3;
+}
 
 .portfolio-card {
     background-color: var(--main-background-color);
