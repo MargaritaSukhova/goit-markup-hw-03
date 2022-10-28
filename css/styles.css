@@ -10,8 +10,19 @@
     --sencondary-white-color: rgba(255, 255, 255, 0.6);
     --btn-active-color: #188CE8;
     --portfolio-card-border-color: #EEEEEE;
+    --indent: 30px;
+    --items: 4;
 }
 
+.container {
+    width: 1200px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+
+    /*outline: 2px solid red;*/
+}
 body {
     font-family: 'Roboto', 'Verdana', sans-serif;
     font-size: 14px;
@@ -31,11 +42,36 @@ body {
     clip: rect(0 0 0 0);
     overflow: hidden;
 }
+
+/* Card set */
+
+.card-set {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--indent);
+}
+
+.card-set-item {
+    flex-basis: calc((100% - var(--indent) * (var(--items) - 1)) / (var(--items)));
+}
+
+/* Reset*/
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+img {
+    display: block;
+}
+
 .link {
     text-decoration: none;
 }
 
 .list {
+    padding: 0;
+    margin: 0;
     list-style: none;
 }
 
@@ -44,9 +80,19 @@ body {
     cursor: pointer;
     border: 0;
 }
+
+/* Header*/
+
 .header {
     background-color: var(--main-background-color);
+    border-bottom: 1px solid #ECECEC;
 }
+
+.header-container {
+    display: flex;
+    align-items: center;
+}
+
 .logo {
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
@@ -55,11 +101,23 @@ body {
     letter-spacing: 0.03em;
     color: var(--logo-color);
 }
+
+.logo-header {
+    margin-right: 93px;
+}
+
 .logo-accent {
     color: var(--accent-color)
 }
 
+.nav-list {
+    display: flex;
+    gap: 50px;
+}
 .nav-item {
+    display: block;
+    padding-top: 32px;
+    padding-bottom: 32px;
     font-weight: 500;
     line-height: calc(16 / 14);
     letter-spacing: 0.02em;
@@ -74,6 +132,12 @@ body {
     color: var(--accent-color)
 }
 
+.contact-list {
+    display: flex;
+    gap: 50px;
+    margin-left: auto;
+}
+
 .contact {
         font-weight: 500;
         line-height: calc(16 / 14);
@@ -86,11 +150,19 @@ body {
     color: var(--accent-color);
 }
 
+/* hero*/
+
 .hero {
     background-color: var(--dark-background-color);
+    text-align: center;
 }
 
 .hero-title {
+    width: 696px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 30px;
+
     font-weight: 900;
     font-size: 44px;
     line-height: calc(60 / 44);
@@ -101,6 +173,9 @@ body {
 }
 
 .hero-btn {
+    padding: 10px 32px;
+    min-width: 216px;
+
     font-weight: 700;
     font-size: 16px;
     line-height: calc(30 / 16);
@@ -108,14 +183,28 @@ body {
     letter-spacing: 0.06em;
     color: var(--main-white-color);
     background-color: var(--accent-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
 }
+
 .hero-btn:active,
 .hero-btn:hover,
 .hero-btn:focus {
     background-color: var(--btn-active-color)
 }
+/* Features */
+
+.section {
+    padding-top: 94px;
+    padding-bottom: 94px;
+}
+.features-list {
+    margin-bottom: 94px;
+}
 
 .features-item {
+    margin-bottom: 10px;
+
     font-weight: 700;
     font-size: 14px;
     line-height: calc(16 / 14);
@@ -129,7 +218,11 @@ body {
     letter-spacing: 0.03em;
 }
 
+/* Work examples */
+
 .section-title {
+    margin-bottom: 50px;
+
     font-weight: 700;
     font-size: 36px;
     line-height: calc(42 / 36);
@@ -138,15 +231,28 @@ body {
     color: var(--main-title-color);
 }
 
+.work-list {
+--item: 3;
+}
+
+/* Team */
+
 .team {
     background-color: var(--secondary-background-color);
 }
 
 .team-card {
     background-color: var(--main-background-color);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
+}
+.team-wrapper {
+    padding: 30px 10px;
 }
 
 .team-name {
+    margin-bottom: 10px;
+
     font-weight: 500;
     font-size: 16px;
     line-height: calc(19 / 16);
@@ -161,34 +267,59 @@ body {
     text-align: center;
     letter-spacing: 0.03em;
 }
+/* Footer*/
 
 .footer {
     background-color: var(--dark-background-color);
 }
 
+.footer-container {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
 .logo-footer {
+    display: inline-block;
+    margin-bottom: 20px;
+
     color: var(--main-white-color)
 }
 
-.contact-item {
+.contact-item:not(:last-child) {
+    margin-bottom: 9px;
+}
+
+.contact-link {
     font-style: normal;
     line-height: calc(24 / 14);
     letter-spacing: 0.03em;
     color: var(--main-white-color);
 }
-.contact-item.mail ,
-.contact-item.phone {
+.contact-link.mail ,
+.contact-link.phone {
     color: var(--sencondary-white-color);
 }
 
-.contact-item:hover,
-.contact-item:focus {
+.contact-link:hover,
+.contact-link:focus {
     color: var(--accent-color)
 }
 
 /* ----------------Portfolio CSS------------------- */
 
+/* Filer */
+
+.filter-list {
+    display:flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 50px;
+}
+
 .filter-btn {
+    padding: 6px 22px;
+    min-width: 73px;
+
     background-color: var(--secondary-background-color);
     font-weight: 500;
     font-size: 16px;
@@ -196,6 +327,7 @@ body {
     text-align: center;
     letter-spacing: 0.03em;
     color: var(--main-title-color);
+    border-radius: 4px;
 }
 .filter-btn.current {
     color: var(--main-white-color);
@@ -208,8 +340,17 @@ body {
     background-color: var(--accent-color);
 }
 
+/* Portfolio */
+
 .portfolio-card {
     background-color: var(--main-background-color);
+}
+
+.project-wrapper {
+    padding: 20px 24px;
+
+    border: 1px solid var(--portfolio-card-border-color);
+    border-top: none;
 }
 
 .project-title {
