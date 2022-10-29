@@ -21,7 +21,7 @@
     margin-left: auto;
     margin-right: auto;
 
-    /*outline: 2px solid red;*/
+    outline: 2px solid red;
 }
 body {
     font-family: 'Roboto', 'Verdana', sans-serif;
@@ -155,11 +155,16 @@ img {
     color: var(--accent-color);
 }
 
-/* hero*/
+/* Hero*/
 
 .hero {
     background-color: var(--dark-background-color);
     text-align: center;
+}
+
+.hero-container{
+    padding-top: 200px;
+    padding-bottom: 200px;
 }
 
 .hero-title {
@@ -203,9 +208,6 @@ img {
     padding-top: 94px;
     padding-bottom: 94px;
 }
-.features-list {
-    margin-bottom: 94px;
-}
 
 .features-item {
     margin-bottom: 10px;
@@ -224,6 +226,10 @@ img {
 }
 
 /* Work examples */
+
+.work-section {
+    padding-top: 0;
+}
 
 .section-title {
     margin-bottom: 50px;
@@ -296,7 +302,7 @@ img {
 
 .contact-link {
     font-style: normal;
-    line-height: calc(24 / 14);
+    line-height: calc(21 / 14);
     letter-spacing: 0.03em;
     color: var(--main-white-color);
 }
