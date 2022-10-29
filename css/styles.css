@@ -157,14 +157,11 @@ img {
 
 /* Hero*/
 
-.hero {
-    background-color: var(--dark-background-color);
-    text-align: center;
-}
-
-.hero-container{
+.hero-section {
     padding-top: 200px;
     padding-bottom: 200px;
+    background-color: var(--dark-background-color);
+    text-align: center;
 }
 
 .hero-title {
@@ -281,12 +278,9 @@ img {
 /* Footer*/
 
 .footer {
-    background-color: var(--dark-background-color);
-}
-
-.footer-container {
     padding-top: 60px;
     padding-bottom: 60px;
+    background-color: var(--dark-background-color);
 }
 
 .logo-footer {
@@ -368,6 +362,7 @@ img {
 }
 
 .project-title {
+    margin-bottom: 4px;
     font-weight: 700;
     font-size: 18px;
     line-height: calc(36 / 18);
